@@ -24,6 +24,8 @@ BUILD_DEPENDS=	llvm-config38:devel/llvm38 \
 		patchelf:sysutils/patchelf
 
 USES=	gmake compiler:c++11-lib fortran
+# cannot be USE_GCC here. Julia only need the fortran compiler in gcc. USE_GCC will change CC also
+GCC_DEFAULT=	6
 USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
